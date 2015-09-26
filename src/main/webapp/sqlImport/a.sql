@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS user;
+CREATE TABLE user(id int primary key,username varchar(100),password varchar(100),name varchar(100),role varchar(100));
+DROP TABLE IF EXISTS userlog;
+CREATE TABLE userlog(id int primary key auto_increment,username varchar(100),status varchar(100),time timestamp default current_timestamp,ipaddress varchar(100));
+DROP TABLE IF EXISTS authtoken;
+CREATE TABLE authtoken(id int primary key auto_increment,token varchar(100),time varchar(100),expires varchar(100),username varchar(100),role varchar(100));
+DROP TABLE IF EXISTS datachangelog;
+CREATE TABLE datachangelog(id int primary key auto_increment,log text,status varchar(100));
+DROP TABLE IF EXISTS filechangelog;
+CREATE TABLE filechangelog(id int primary key auto_increment,filename varchar(100),filestore varchar(100),category varchar(100),status varchar(100));
+DROP TABLE IF EXISTS area;
+DROP TABLE IF EXISTS outbox;
+CREATE TABLE outbox(id int primary key auto_increment,datastore varchar(100),ref varchar(100),refId varchar(100),recipient int,distList varchar(100),dwnStatus varchar(100));
+DROP TABLE IF EXISTS inbox;
+CREATE TABLE inbox(id int primary key auto_increment,datastore varchar(100),ref varchar(100),refId varchar(100),distList varchar(100),distStatus varchar(100),impStatus varchar(100));
+DROP TABLE IF EXISTS command;
+CREATE TABLE command(id int primary key auto_increment,name varchar(100),status varchar(100));
