@@ -2,13 +2,9 @@ ISHA-LOGISTICS-Services
 =============
 
 
-A Web  Services module for hc-ui
+A Web  Services module for isha-logistics-ui
 
-Includes
 
-* GridService
-* ReportService
-* IDService
 
 Usage :
 =======
