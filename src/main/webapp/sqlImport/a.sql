@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS user;
-CREATE TABLE user(id int primary key,username varchar(100),password varchar(100),name varchar(100),role varchar(100));
+CREATE TABLE user(username varchar(100) primary key,password varchar(100),name varchar(100),role varchar(100));
 DROP TABLE IF EXISTS userlog;
 CREATE TABLE userlog(id int primary key auto_increment,username varchar(100),status varchar(100),time timestamp default current_timestamp,ipaddress varchar(100));
 DROP TABLE IF EXISTS authtoken;

@@ -64,7 +64,7 @@ beans {
         //Todo production config
         //url = 'jdbc:h2:mem:specs;database_to_upper=false;mode=mysql;'
         //url = 'jdbc:h2:~/mvm;database_to_upper=false;mode=mysql;DB_CLOSE_ON_EXIT=FALSE;MV_STORE=FALSE'
-        url = 'jdbc:h2:~/isha_logistics;database_to_upper=false;mode=mysql;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE;MV_STORE=FALSE'
+        url = 'jdbc:h2:./build/isha_logistics;database_to_upper=false;mode=mysql;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE;MV_STORE=FALSE'
         username = 'sa'
         password = ''
         initialSize = 5
@@ -77,7 +77,7 @@ beans {
     dbAccess(DbAccess, gSql = gSql)
 
     //Todo  Project specific Entities
-    dataStoreFactory(HashMap,[ user:'id', team:'id', teamuser:'id', assignment:'id', userlog:'id', authtoken:'id', datachangelog:'id', filechangelog:'id',outbox:'id', inbox:'id'])
+    dataStoreFactory(HashMap,[ user:'username', team:'id', teamuser:'id', assignment:'id', userlog:'id', authtoken:'id', datachangelog:'id', filechangelog:'id',outbox:'id', inbox:'id', cryovial:'cryovialId', cryovialBox: 'cryovialBoxId', freezerUnit: 'freezerRackId'])
     dbStore(DbStore, gSql = gSql, dataStoreFactory = dataStoreFactory)
     entity(Entity, dbAccess = dbAccess,
             dbStore = dbStore,
